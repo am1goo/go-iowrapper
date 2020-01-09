@@ -205,11 +205,12 @@ func assertEquals(t *testing.T, actual interface{}, expect interface{}) {
 		actualArray := sliceToArray(actual)
 		expectArray := sliceToArray(expect)
 		assertEquals(t, actualArray, expectArray)
-
+		break
 	default:
 		if !reflect.DeepEqual(actual, expect) {
 			t.Error(fmt.Sprintf("value mismatch, actual=%v, expect=%v", actual, expect))
 		}
+		break
 	}
 }
 
